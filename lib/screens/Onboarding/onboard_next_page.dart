@@ -1,8 +1,10 @@
+import 'package:drivado_b2b_app/screens/auth/login/login_screen.dart';
 import 'package:drivado_b2b_app/screens/common_widgets/custom_buttons.dart';
 import 'package:drivado_b2b_app/screens/common_widgets/custom_decoration.dart';
 import 'package:drivado_b2b_app/screens/common_widgets/custom_text.dart';
 import 'package:drivado_b2b_app/utils/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 class OnboardNextPage extends StatefulWidget {
   final bool? isLogin;
@@ -43,11 +45,15 @@ class _OnboardNextPageState extends State<OnboardNextPage> {
                   textAlign: TextAlign.center,
                   height: 1.2,color: Colors.white, fontWeight: FontWeight.w300, fontSize: 15),
                   const SizedBox(height: 10,),
-                  
               const SizedBox(height: 45,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 22.0),
-                child: CustomButtons(onTap: () {}, title: 'Let\'s Go', color: Colors.white, fontWeight: FontWeight.w600, fontSize: 16),
+                child: CustomButtons(onTap: () {
+                  Navigator.of(context).push(SwipeablePageRoute(
+                    transitionDuration: const Duration(milliseconds: 700),
+                    builder: (BuildContext context) => const LoginPage(),
+                  ));
+                }, title: 'Let\'s Go', color: Colors.white, fontWeight: FontWeight.w600, fontSize: 16),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.15,),
             ],
