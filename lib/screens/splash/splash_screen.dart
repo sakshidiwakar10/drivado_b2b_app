@@ -21,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future<void> appStarted() async {
-    await Future.delayed(const Duration(seconds: 10));
+    await Future.delayed(const Duration(seconds: 2));
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => Onboarding(isLogin: false)),

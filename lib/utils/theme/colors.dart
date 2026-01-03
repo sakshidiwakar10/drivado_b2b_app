@@ -5,5 +5,4 @@ class AppColors {
   static const textFieldLabelTextColor = Color(0xff191919);
   static const arrowColor = Color(0xFF555555);
   static const strokeColor = Color(0xFFDBDBDB);
-
 }
